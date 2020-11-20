@@ -1,0 +1,21 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #048ABF;
+}
+.card-calculator{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.nota{
+    text-align: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
