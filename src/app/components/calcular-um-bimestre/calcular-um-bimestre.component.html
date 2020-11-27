@@ -1,0 +1,59 @@
+<app-template subtitle="Calcular a média de um bimestre">
+    <mat-card class="card-calculator card-content">
+        <form class="form">
+            <mat-form-field>
+                <input 
+                    matInput 
+                    type="number" 
+                    max="10" 
+                    placeholder="Nota 1" 
+                    [(ngModel)]="notas.nota1" 
+                    name="grade1">
+            </mat-form-field>
+    
+            <mat-form-field>
+                <input 
+                    matInput 
+                    type="number" 
+                    max="10" 
+                    placeholder="Nota 2" 
+                    [(ngModel)]="notas.nota2"
+                    name="grade2">
+            </mat-form-field>
+    
+            <mat-form-field>
+                <input 
+                    matInput 
+                    type="number" 
+                    max="10" 
+                    placeholder="Nota 3 (opcional)" 
+                    [(ngModel)]="notas.nota3" 
+                    name="grade3">
+            </mat-form-field>
+            <mat-form-field>
+                <input 
+                    matInput 
+                    type="number" 
+                    max="10" 
+                    placeholder="atitudinal" 
+                    [(ngModel)]="notas.atitudinal" 
+                    name="grade3">
+            </mat-form-field>
+    
+            <button mat-raised-button color="primary" (click)="calcular()">
+                Calcular
+            </button>
+        </form>
+    </mat-card>
+
+    <mat-card *ngIf="resultado != '' ">
+        <mat-card-content class="card-content">
+            <div class="nota">
+                Você tem uma média <strong>{{resultado}}</strong>
+            </div>
+            <img mat-card-image class="image" src="https://falaserioamigaa.files.wordpress.com/2016/03/gifs-so-gifs-engracados-2.gif">
+        </mat-card-content>
+    </mat-card>
+</app-template>
+
+

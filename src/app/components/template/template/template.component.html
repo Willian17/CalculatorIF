@@ -1,0 +1,29 @@
+<div class="app">
+    <mat-card class="card-app">
+        <mat-card-title class="title">  Calculadora de notas do IF </mat-card-title>
+        <mat-card-subtitle class="subtitle"> {{subtitle}}</mat-card-subtitle>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="['']">
+              <mat-icon>navigate_next</mat-icon>
+              <span>Calcular todos bimestres</span>
+            </button>
+            <button mat-menu-item [routerLink]="['/tres/bimestres']">
+              <mat-icon>navigate_next</mat-icon>
+              <span>Calcular até o 3° bimestre</span>
+            </button>
+            <button mat-menu-item [routerLink]="['/um/bimestre']">
+              <mat-icon>navigate_next</mat-icon>
+              <span>Calcular média de um bimestre</span>
+            </button>
+          </mat-menu>
+          
+        <div class="container-cards">
+            <ng-content></ng-content>
+        </div>
+
+    </mat-card>
+</div>
+

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 3000",
+    "start": "ng serve",
     "build": "ng build --prod && firebase deploy",
     "test": "ng test",
     "lint": "ng lint"

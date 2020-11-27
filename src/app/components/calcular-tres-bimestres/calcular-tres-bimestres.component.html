@@ -1,0 +1,61 @@
+<app-template subtitle="Calcular a nota necessária para passar de ano no 4° bimestre">
+    <mat-card class="card-calculator card-content">
+        <form class="form">
+            <mat-form-field>
+                <input 
+                    matInput 
+                    type="number" 
+                    max="10" 
+                    placeholder="Média 1° bimestre" 
+                    [(ngModel)]="notas.primeiroBimestre" 
+                    name="grade1">
+            </mat-form-field>
+    
+            <mat-form-field>
+                <input 
+                    matInput 
+                    type="number" 
+                    max="10" 
+                    placeholder="Média 2° bimestre" 
+                    [(ngModel)]="notas.segundoBimestre"
+                    name="grade2">
+            </mat-form-field>
+    
+            <mat-form-field>
+                <input 
+                    matInput 
+                    type="number" 
+                    max="10" 
+                    placeholder="Média 3° bimestre" 
+                    [(ngModel)]="notas.terceiroBimestre" 
+                    name="grade3">
+            </mat-form-field>
+    
+            <button mat-raised-button color="primary" (click)="calcular()">
+                Calcular
+            </button>
+        </form>
+    </mat-card>
+
+    <mat-card *ngIf="resultado != '' ">
+        <mat-card-content *ngIf="resultado > 0 && resultado <= 10" class="card-content">
+            <div class="nota">
+                Você precisa de uma média <strong>{{resultado}}</strong>  <br> no 4° bimestre
+            </div>
+            <img mat-card-image class="image" src="https://falaserioamigaa.files.wordpress.com/2016/03/gifs-so-gifs-engracados-2.gif">
+        </mat-card-content>
+        <mat-card-content *ngIf="resultado <= 0" class="card-content">
+            <div class="nota">
+                Brabo, brabo, você já passou de ano !!!
+            </div>
+            <img mat-card-image class="image" src="https://media1.giphy.com/media/d1OcDN64mZsQfj2q3G/giphy.gif">
+        </mat-card-content>
+        <mat-card-content *ngIf="resultado > 10" class="card-nota card-content">
+            <div class="nota">
+                Infelizmente, você pegou DP !!!
+            </div>
+            <img mat-card-image class="image" src="https://thumbs.gfycat.com/InformalOldButterfly-size_restricted.gif">
+        </mat-card-content>
+    </mat-card>
+</app-template>
+

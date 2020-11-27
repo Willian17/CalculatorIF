@@ -1,0 +1,30 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #048ABF;
+}
+.card-app{
+    padding: 20px;
+}
+.card-app .title  {
+    text-align: center;
+}
+.card-app .subtitle  {
+    text-align: center;
+}
+
+.container-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 1000px){
+    .container-cards{
+        flex-direction: column;
+    }
+}
