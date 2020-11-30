@@ -1,9 +1,10 @@
 <app-template subtitle="Calcular a média de um bimestre">
     <mat-card class="card-calculator card-content">
-        <form class="form">
+        <form class="form" (ngSubmit)="calcular()">
             <mat-form-field>
                 <input 
                     matInput 
+                    required
                     type="number" 
                     max="10" 
                     placeholder="Nota 1" 
@@ -14,6 +15,7 @@
             <mat-form-field>
                 <input 
                     matInput 
+                    required
                     type="number" 
                     max="10" 
                     placeholder="Nota 2" 
@@ -26,13 +28,14 @@
                     matInput 
                     type="number" 
                     max="10" 
-                    placeholder="Nota 3 (opcional)" 
+                    placeholder="Nota 3" 
                     [(ngModel)]="notas.nota3" 
                     name="grade3">
             </mat-form-field>
             <mat-form-field>
                 <input 
                     matInput 
+                    required
                     type="number" 
                     max="10" 
                     placeholder="atitudinal" 
@@ -40,7 +43,7 @@
                     name="grade3">
             </mat-form-field>
     
-            <button mat-raised-button color="primary" (click)="calcular()">
+            <button mat-raised-button color="primary" type="submit">
                 Calcular
             </button>
         </form>

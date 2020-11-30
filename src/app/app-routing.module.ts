@@ -7,11 +7,11 @@ import { CalcularUmBimestreComponent } from './components/calcular-um-bimestre/c
 const routes: Routes = [
   {
     path: "",
-    component: CalcularTodosBimestresComponent
+    component: CalcularTresBimestresComponent
   },
   {
-    path: "tres/bimestres",
-    component: CalcularTresBimestresComponent
+    path: "todos/bimestres",
+    component: CalcularTodosBimestresComponent
   },
   {
     path: "um/bimestre",

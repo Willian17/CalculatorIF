@@ -12,7 +12,6 @@ export class CalcularTresBimestresComponent implements OnInit {
     primeiroBimestre: undefined,
     segundoBimestre: undefined,
     terceiroBimestre: undefined,
-    
   }
 
   resultado: string = ''
@@ -25,15 +24,19 @@ export class CalcularTresBimestresComponent implements OnInit {
   }
   
   calcular(): void {
-   this.resultado = this.calculatorService.quantoFaltaParaOQuartoBim(
+  
+    const resultado = this.calculatorService.quantoFaltaParaOQuartoBim(
       this.notas.primeiroBimestre, 
       this.notas.segundoBimestre, 
       this.notas.terceiroBimestre )
-
-      setTimeout(()=>{
+    if(resultado){
+        this.resultado = resultado
+        setTimeout(()=>{
         this.emitirSom(+this.resultado)
       }, 1000)
-
+    } else {
+      this.resultado = ''
+    }
   }
 
   emitirSom(resultado: number){

@@ -1,9 +1,10 @@
 <app-template subtitle="Calcular a nota necessária para passar de ano no 4° bimestre">
     <mat-card class="card-calculator card-content">
-        <form class="form">
+        <form class="form" (ngSubmit)="calcular()">
             <mat-form-field>
                 <input 
                     matInput 
+                    required
                     type="number" 
                     max="10" 
                     placeholder="Média 1° bimestre" 
@@ -13,6 +14,7 @@
     
             <mat-form-field>
                 <input 
+                    required
                     matInput 
                     type="number" 
                     max="10" 
@@ -23,6 +25,7 @@
     
             <mat-form-field>
                 <input 
+                    required
                     matInput 
                     type="number" 
                     max="10" 
@@ -31,13 +34,13 @@
                     name="grade3">
             </mat-form-field>
     
-            <button mat-raised-button color="primary" (click)="calcular()">
+            <button mat-raised-button color="primary" type="submit">
                 Calcular
             </button>
         </form>
     </mat-card>
 
-    <mat-card *ngIf="resultado != '' ">
+    <mat-card *ngIf="resultado != ''">
         <mat-card-content *ngIf="resultado > 0 && resultado <= 10" class="card-content">
             <div class="nota">
                 Você precisa de uma média <strong>{{resultado}}</strong>  <br> no 4° bimestre

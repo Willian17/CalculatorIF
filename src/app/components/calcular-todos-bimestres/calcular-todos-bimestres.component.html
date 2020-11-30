@@ -1,8 +1,9 @@
 <app-template subtitle="Calcular média de todos os bimestres e verificar se passou de ano">
     <mat-card class="card-calculator" id="card-content">
-        <form class="form">
+        <form class="form" (ngSubmit)="calcular()">
             <mat-form-field>
                 <input 
+                    required
                     matInput 
                     type="number" 
                     max="10" 
@@ -13,6 +14,7 @@
     
             <mat-form-field>
                 <input 
+                    required
                     matInput 
                     type="number" 
                     max="10" 
@@ -23,6 +25,7 @@
     
             <mat-form-field>
                 <input 
+                    required
                     matInput 
                     type="number" 
                     max="10" 
@@ -33,6 +36,7 @@
             <mat-form-field>
                 <input 
                     matInput 
+                    required
                     type="number" 
                     max="10" 
                     placeholder="Média 4° bimestre" 
@@ -40,7 +44,7 @@
                     name="grade4">
             </mat-form-field>
     
-            <button mat-raised-button color="primary" (click)="calcular()">
+            <button mat-raised-button color="primary" type="submit">
                 Calcular
             </button>
         </form>

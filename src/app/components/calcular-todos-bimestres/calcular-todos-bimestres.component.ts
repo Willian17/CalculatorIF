@@ -22,17 +22,25 @@ export class CalcularTodosBimestresComponent implements OnInit {
   }
 
   calcular(): void {
-    this.resultado = this.calculatorService.mediaTodosOsBimestres(
-       this.notas.primeiroBimestre, 
-       this.notas.segundoBimestre, 
-       this.notas.terceiroBimestre,
-       this.notas.quartoBimestre
-       )
-       
+    const {primeiroBimestre, segundoBimestre, terceiroBimestre, quartoBimestre} = this.notas
+      const resultado = this.calculatorService.mediaTodosOsBimestres(
+        primeiroBimestre, 
+        segundoBimestre, 
+        terceiroBimestre, 
+        quartoBimestre
+        )
 
-       setTimeout(()=>{
-         this.emitirSom(+this.resultado)
-       }, 1000)
+        console.log(resultado)
+
+        if(resultado){
+          this.resultado = resultado
+          setTimeout(()=>{
+            this.emitirSom(+this.resultado)
+          }, 1000)
+        } else {
+          this.resultado = '';
+        }
+  
    }
 
    emitirSom(resultado: number){
