@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,6 +16,7 @@ import { TemplateComponent } from './components/template/template/template.compo
 import { CalcularTodosBimestresComponent } from './components/calcular-todos-bimestres/calcular-todos-bimestres.component';
 import { CalcularTresBimestresComponent } from './components/calcular-tres-bimestres/calcular-tres-bimestres.component';
 import { CalcularUmBimestreComponent } from './components/calcular-um-bimestre/calcular-um-bimestre.component';
+import { CalcularPFComponent } from './components/calcular-pf/calcular-pf.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { CalcularUmBimestreComponent } from './components/calcular-um-bimestre/c
     TemplateComponent,
     CalcularTodosBimestresComponent,
     CalcularTresBimestresComponent,
-    CalcularUmBimestreComponent
+    CalcularUmBimestreComponent,
+    CalcularPFComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { CalcularUmBimestreComponent } from './components/calcular-um-bimestre/c
     MatButtonModule,
     MatCardModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

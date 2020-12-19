@@ -1,0 +1,35 @@
+<app-template subtitle="Calcular a nota necessária na PF para passar de ano">
+    <mat-card class="card-calculator card-content">
+        <form class="form" (ngSubmit)="calcular()">
+            <mat-form-field>
+                <input 
+                    matInput 
+                    required
+                    type="number" 
+                    max="10" 
+                    placeholder="Média Geral" 
+                    [(ngModel)]="notas.mediaGeral" 
+                    name="grade1">
+            </mat-form-field>
+    
+            <button mat-raised-button color="primary" type="submit">
+                Calcular
+            </button>
+        </form>
+    </mat-card>
+
+    <mat-card *ngIf="resultado != ''">
+        <mat-card-content *ngIf="resultado > 4" class="card-content">
+            <div class="nota">
+                Você precisa de {{resultado}} na PF para passar de ano
+            </div>
+            <img mat-card-image class="image" src="https://thumbs.gfycat.com/InformalOldButterfly-size_restricted.gif">
+        </mat-card-content>
+        <mat-card-content *ngIf="resultado <= 4" class="card-content">
+            <div class="nota">
+                Vocẽ já passou de ano, não precisa de PF
+            </div>
+            <img mat-card-image class="image" src="https://media1.giphy.com/media/d1OcDN64mZsQfj2q3G/giphy.gif">
+        </mat-card-content>
+    </mat-card>
+</app-template>

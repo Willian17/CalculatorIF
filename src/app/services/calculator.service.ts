@@ -21,4 +21,9 @@ export class CalculatorService {
     (((nota1 + nota2 + nota3)/3) * 0.8) + atitudinal
     return isNaN(resultado) ? '' : resultado.toFixed(2)
   }
+
+  quantoPrecisoParaPf(mediaGeral: number): string{
+    const resultado: number = 10 - mediaGeral
+    return isNaN(resultado) ? '' : resultado.toFixed(2)
+  }
 }
