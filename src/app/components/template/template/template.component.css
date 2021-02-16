@@ -4,16 +4,19 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background-color: #048ABF;
+    background-color: #f8f1f1;
 }
 .card-app{
     padding: 20px;
+    background-color: #16c79a   ;
 }
 .card-app .title  {
     text-align: center;
+    color: #fff;
 }
 .card-app .subtitle  {
     text-align: center;
+    color: #f8f1f1;
 }
 
 .container-cards{
