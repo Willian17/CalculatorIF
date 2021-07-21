@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --hmr",
     "build": "ng build --prod && firebase deploy && git add . && git commit -m 'deploy' && git push",
     "test": "ng test",
     "lint": "ng lint"

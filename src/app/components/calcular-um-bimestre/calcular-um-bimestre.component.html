@@ -1,6 +1,6 @@
 <app-template subtitle="Calcular a média de um bimestre">
     <mat-card class="card-calculator card-content">
-        <form class="form" (ngSubmit)="calcular()">
+        <form class="form" (ngSubmit)="calculate()">
             <mat-form-field>
                 <input 
                     matInput 
@@ -8,7 +8,7 @@
                     type="number" 
                     max="10" 
                     placeholder="Nota 1" 
-                    [(ngModel)]="notas.nota1" 
+                    [(ngModel)]="grades.grade1" 
                     name="grade1">
             </mat-form-field>
     
@@ -19,7 +19,7 @@
                     type="number" 
                     max="10" 
                     placeholder="Nota 2" 
-                    [(ngModel)]="notas.nota2"
+                    [(ngModel)]="grades.grade2"
                     name="grade2">
             </mat-form-field>
     
@@ -29,7 +29,7 @@
                     type="number" 
                     max="10" 
                     placeholder="Nota 3" 
-                    [(ngModel)]="notas.nota3" 
+                    [(ngModel)]="grades.grade3" 
                     name="grade3">
             </mat-form-field>
             <mat-form-field>
@@ -39,7 +39,7 @@
                     type="number" 
                     max="10" 
                     placeholder="atitudinal" 
-                    [(ngModel)]="notas.atitudinal" 
+                    [(ngModel)]="grades.attitudinal" 
                     name="grade3">
             </mat-form-field>
     
@@ -49,10 +49,10 @@
         </form>
     </mat-card>
 
-    <mat-card *ngIf="resultado != '' ">
+    <mat-card *ngIf="avarageBimester != undefined ">
         <mat-card-content class="card-content">
             <div class="nota">
-                Você tem uma média <strong>{{resultado}}</strong>
+                Você tem uma média <strong>{{avarageBimester}}</strong>
             </div>
             <img mat-card-image class="image" src="https://falaserioamigaa.files.wordpress.com/2016/03/gifs-so-gifs-engracados-2.gif">
         </mat-card-content>

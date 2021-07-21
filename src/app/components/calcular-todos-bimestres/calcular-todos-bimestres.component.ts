@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CalculatorService } from 'src/app/services/calculator.service';
 
 @Component({
   selector: 'app-calcular-todos-bimestres',
@@ -7,54 +6,55 @@ import { CalculatorService } from 'src/app/services/calculator.service';
   styleUrls: ['./calcular-todos-bimestres.component.css']
 })
 export class CalcularTodosBimestresComponent implements OnInit {
-  notas = {
-    primeiroBimestre: undefined,
-    segundoBimestre: undefined,
-    terceiroBimestre: undefined,
-    quartoBimestre: undefined,
+  grades = {
+    firstBimester: undefined,
+    secondBimester: undefined,
+    thirdBimester: undefined,
+    fourthBimester: undefined,
   }
 
-  resultado: string = ''
+  generalAverage: number;
 
-  constructor(private calculatorService: CalculatorService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  calcular(): void {
-    const {primeiroBimestre, segundoBimestre, terceiroBimestre, quartoBimestre} = this.notas
-      const resultado = this.calculatorService.mediaTodosOsBimestres(
-        primeiroBimestre, 
-        segundoBimestre, 
-        terceiroBimestre, 
-        quartoBimestre
-        )
-
-        console.log(resultado)
-
-        if(resultado){
-          this.resultado = resultado
-          setTimeout(()=>{
-            this.emitirSom(+this.resultado)
-          }, 1000)
-        } else {
-          this.resultado = '';
-        }
-  
+  calculate(): void {
+    const makeSoundMs = 1000;
+    const {firstBimester, secondBimester, thirdBimester, fourthBimester} = this.grades
+    this.generalAverage = this.calculateGeneralAverage(
+      firstBimester, 
+      secondBimester, 
+      thirdBimester, 
+      fourthBimester
+    )
+    if(this.generalAverage !== undefined){ 
+      setTimeout(()=>{
+        this.makeSound(+this.generalAverage)
+      }, makeSoundMs)
+    }  
    }
 
-   emitirSom(resultado: number){
+   calculateGeneralAverage(notaBimester1: number, notaBimester2:number, notaBimester3:number, notaBimester4:number): number{
+    const generalAverage: number = (60 - ((notaBimester1 * 2) + (notaBimester2 * 2) + (notaBimester3 * 3) + (notaBimester4 * 3)))
+    return isNaN(generalAverage) ? undefined : +generalAverage.toFixed(2)
+  }
+
+   makeSound(generalAverage: number){
+     const approved = generalAverage <= 0;
      const baseUrlAudio =  '../../../assets'
-     if(resultado <= 0){ // passou de ano
+     const pauseSoundMs = 5000;
+     if(approved){
       var audio = new Audio(`${baseUrlAudio}/tetra.mp3`)
-     } else { // reprovou
+     } else {
       var audio = new Audio(`${baseUrlAudio}/sifudeu.mp3`)
      }
      audio.play()
      
      setTimeout(()=> {
       audio.pause()
-    }, 5000)
+    }, pauseSoundMs)
    }
  
 

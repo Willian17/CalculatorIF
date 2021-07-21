@@ -1,6 +1,6 @@
 <app-template subtitle="Calcular a nota necessária para passar de ano no 4° bimestre">
     <mat-card class="card-calculator card-content">
-        <form class="form" (ngSubmit)="calcular()">
+        <form class="form" (ngSubmit)="calculate()">
             <mat-form-field>
                 <input 
                     matInput 
@@ -8,7 +8,7 @@
                     type="number" 
                     max="10" 
                     placeholder="Média 1° bimestre" 
-                    [(ngModel)]="notas.primeiroBimestre" 
+                    [(ngModel)]="grades.firstBimester" 
                     name="grade1">
             </mat-form-field>
     
@@ -19,7 +19,7 @@
                     type="number" 
                     max="10" 
                     placeholder="Média 2° bimestre" 
-                    [(ngModel)]="notas.segundoBimestre"
+                    [(ngModel)]="grades.secondBimester"
                     name="grade2">
             </mat-form-field>
     
@@ -30,7 +30,7 @@
                     type="number" 
                     max="10" 
                     placeholder="Média 3° bimestre" 
-                    [(ngModel)]="notas.terceiroBimestre" 
+                    [(ngModel)]="grades.thirdBimester" 
                     name="grade3">
             </mat-form-field>
     
@@ -40,20 +40,20 @@
         </form>
     </mat-card>
 
-    <mat-card *ngIf="resultado != ''">
-        <mat-card-content *ngIf="resultado > 0 && resultado <= 10" class="card-content">
+    <mat-card *ngIf="minimumGradeForFourBimester != undefined">
+        <mat-card-content *ngIf="minimumGradeForFourBimester > 0 && minimumGradeForFourBimester <= 10" class="card-content">
             <div class="nota">
-                Você precisa de uma média <strong>{{resultado}}</strong>  <br> no 4° bimestre
+                Você precisa de uma média <strong>{{minimumGradeForFourBimester}}</strong>  <br> no 4° bimestre
             </div>
             <img mat-card-image class="image" src="https://falaserioamigaa.files.wordpress.com/2016/03/gifs-so-gifs-engracados-2.gif">
         </mat-card-content>
-        <mat-card-content *ngIf="resultado <= 0" class="card-content">
+        <mat-card-content *ngIf="minimumGradeForFourBimester <= 0" class="card-content">
             <div class="nota">
                 Brabo, brabo, você já passou de ano !!!
             </div>
             <img mat-card-image class="image" src="https://media1.giphy.com/media/d1OcDN64mZsQfj2q3G/giphy.gif">
         </mat-card-content>
-        <mat-card-content *ngIf="resultado > 10" class="card-nota card-content">
+        <mat-card-content *ngIf="minimumGradeForFourBimester > 10" class="card-nota card-content">
             <div class="nota">
                 Infelizmente, você pegou DP !!!
             </div>

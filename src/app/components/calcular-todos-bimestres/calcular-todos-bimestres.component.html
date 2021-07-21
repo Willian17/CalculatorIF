@@ -1,6 +1,6 @@
 <app-template subtitle="Calcular média de todos os bimestres e verificar se passou de ano">
     <mat-card class="card-calculator" id="card-content">
-        <form class="form" (ngSubmit)="calcular()">
+        <form class="form" (ngSubmit)="calculate()">
             <mat-form-field>
                 <input 
                     required
@@ -8,7 +8,7 @@
                     type="number" 
                     max="10" 
                     placeholder="Média 1° bimestre" 
-                    [(ngModel)]="notas.primeiroBimestre" 
+                    [(ngModel)]="grades.firstBimester" 
                     name="grade1">
             </mat-form-field>
     
@@ -19,7 +19,7 @@
                     type="number" 
                     max="10" 
                     placeholder="Média 2° bimestre" 
-                    [(ngModel)]="notas.segundoBimestre"
+                    [(ngModel)]="grades.secondBimester"
                     name="grade2">
             </mat-form-field>
     
@@ -30,7 +30,7 @@
                     type="number" 
                     max="10" 
                     placeholder="Média 3° bimestre" 
-                    [(ngModel)]="notas.terceiroBimestre" 
+                    [(ngModel)]="grades.thirdBimester" 
                     name="grade3">
             </mat-form-field>
             <mat-form-field>
@@ -40,7 +40,7 @@
                     type="number" 
                     max="10" 
                     placeholder="Média 4° bimestre" 
-                    [(ngModel)]="notas.quartoBimestre" 
+                    [(ngModel)]="grades.fourthBimester" 
                     name="grade4">
             </mat-form-field>
     
@@ -50,14 +50,14 @@
         </form>
     </mat-card>
 
-    <mat-card *ngIf="resultado != '' ">
-        <mat-card-content *ngIf="resultado <= 0"  class="card-content">
+    <mat-card *ngIf="generalAverage != undefined ">
+        <mat-card-content *ngIf="generalAverage <= 0"  class="card-content">
             <div class="nota">
                Parabéns soldado(a), você passou de ano !!!
             </div>
             <img mat-card-image class="image" src="https://media1.giphy.com/media/d1OcDN64mZsQfj2q3G/giphy.gif">
         </mat-card-content>
-        <mat-card-content *ngIf="resultado > 0" class="card-nota card-content"> 
+        <mat-card-content *ngIf="generalAverage > 0" class="card-nota card-content"> 
             <div class="nota">
                 Infelizmente, você pegou PF !!!
             </div>

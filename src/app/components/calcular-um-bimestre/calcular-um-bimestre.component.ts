@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CalculatorService } from 'src/app/services/calculator.service';
 
 @Component({
   selector: 'app-calcular-um-bimestre',
@@ -7,48 +6,63 @@ import { CalculatorService } from 'src/app/services/calculator.service';
   styleUrls: ['./calcular-um-bimestre.component.css']
 })
 export class CalcularUmBimestreComponent implements OnInit {
-  notas = {
-    nota1: undefined,
-    nota2: undefined,
-    nota3: undefined,
-    atitudinal: undefined,
+  grades = {
+    grade1: undefined,
+    grade2: undefined,
+    grade3: undefined,
+    attitudinal: undefined,
   }
 
-  resultado: string = ''
+  avarageBimester: number;
   
-  constructor(private calculatorService: CalculatorService){
+  constructor(){
 
   }
   
   ngOnInit(): void {
   }
   
-  calcular(): void {
-   this.resultado = this.calculatorService.mediaUmBimestre(
-      this.notas.nota1, 
-      this.notas.nota2, 
-      this.notas.nota3,
-      this.notas.atitudinal 
-      )
-
+  calculate(): void {
+    const {grade1, grade2, grade3, attitudinal} = this.grades
+    const makeSoundMs = 1000;
+    this.avarageBimester = this.calculateAvarageBimester(
+        grade1, 
+        grade2, 
+        grade3,
+        attitudinal 
+    )
+    if(this.avarageBimester != undefined){
       setTimeout(()=>{
-        this.emitirSom(+this.resultado)
-      }, 1000)
+        this.makeSound(+this.avarageBimester)
+      }, makeSoundMs)
+    } 
+  }
+  
+  calculateAvarageBimester(grade1: number, grade2:number, grade3:number | undefined, attitudinal:number): number{
+    const sizeGradeAvarage = 0.8;
+    const avarageBimester: number = grade3 == undefined || grade3 == null ? 
+    (((grade1 + grade2 )/ 2) * sizeGradeAvarage) + attitudinal : 
+    (((grade1 + grade2 + grade3) / 3) * sizeGradeAvarage) + attitudinal
+    return isNaN(avarageBimester) ? undefined : +avarageBimester.toFixed(2)
   }
 
-  emitirSom(resultado: number){
+  makeSound(avarageBimester: number){
+    const needAverage = avarageBimester > 0 && avarageBimester < 8;
+    const approved = avarageBimester >= 8
     const baseUrlAudio =  '../../../assets'
-    if(resultado > 0 && resultado < 8 ){ // precisa de média
+    const pauseSoundMs = 5000;
+
+    if(needAverage){
      var audio = new Audio(`${baseUrlAudio}/mais_ou_menos.mp3`)
-    } else if(resultado >= 8) { // passou de ano
+    } else if(approved) {
      var audio = new Audio(`${baseUrlAudio}/se_o_bichao.mp3`)
-    } else { // reprovou
+    } else {
       var audio = new Audio(`${baseUrlAudio}/sifudeu.mp3`)
     }
     audio.play()
     setTimeout(()=> {
       audio.pause()
-    }, 5000)
+    }, pauseSoundMs)
   }
 
 

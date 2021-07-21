@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CalculatorService } from 'src/app/services/calculator.service';
 
 @Component({
   selector: 'app-calcular-pf',
@@ -7,42 +6,47 @@ import { CalculatorService } from 'src/app/services/calculator.service';
   styleUrls: ['./calcular-pf.component.css']
 })
 export class CalcularPFComponent implements OnInit {
-  notas = {
-    mediaGeral: undefined,
+  grades = {
+    generalAverage: undefined,
   }
-  resultado: string = '';
+  minimumFromPF: number;
 
-  constructor(private calculatorService: CalculatorService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  calcular(): void {
+  calculate(): void {
+    const makeSoundMs = 1000;
   
-    const resultado = this.calculatorService.quantoPrecisoParaPf(
-      this.notas.mediaGeral
-     )
-    if(resultado){
-        this.resultado = resultado
-        setTimeout(()=>{
-        this.emitirSom(+this.resultado)
-      }, 1000)
-    } else {
-      this.resultado = ''
-    }
+    this.minimumFromPF = this.calculateMinimumFromPF(
+      this.grades.generalAverage
+    )
+    setTimeout(()=>{
+      this.makeSound(+this.minimumFromPF)
+    }, makeSoundMs)
   }
 
-  emitirSom(resultado: number){
+  
+  calculateMinimumFromPF(generalAverage: number): number{
+    const endAverage = 10;
+    const result: number = endAverage - generalAverage
+    return isNaN(result) ? undefined : +result.toFixed(2)
+  }
+
+  makeSound(result: number){
+    const needFromPF = result > 4;
     const baseUrlAudio =  '../../../assets'
-    if(resultado > 4){ // precisa de pf
+    const pauseSoundMs = 5000;
+    if(needFromPF){
       var audio = new Audio(`${baseUrlAudio}/sifudeu.mp3`)
-    } else { // não precisa de pf
+    } else {
       var audio = new Audio(`${baseUrlAudio}/tetra.mp3`)
     }
     audio.play()
     setTimeout(()=> {
       audio.pause()
-    }, 5000)
+    }, pauseSoundMs)
   }
 
 }
