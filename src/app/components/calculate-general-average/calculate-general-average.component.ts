@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-calcular-todos-bimestres',
-  templateUrl: './calcular-todos-bimestres.component.html',
-  styleUrls: ['./calcular-todos-bimestres.component.css']
+  selector: 'app-calculate-general-average',
+  templateUrl: './calculate-general-average.component.html',
+  styleUrls: ['./calculate-general-average.component.css']
 })
-export class CalcularTodosBimestresComponent implements OnInit {
+export class CalculateGeneralAvarage implements OnInit {
   grades = {
     firstBimester: undefined,
     secondBimester: undefined,

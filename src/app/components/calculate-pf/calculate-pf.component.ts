@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-calcular-pf',
-  templateUrl: './calcular-pf.component.html',
-  styleUrls: ['./calcular-pf.component.css']
+  selector: 'app-calculate-pf',
+  templateUrl: './calculate-pf.component.html',
+  styleUrls: ['./calculate-pf.component.css']
 })
-export class CalcularPFComponent implements OnInit {
+export class CalculatePFComponent implements OnInit {
   grades = {
     generalAverage: undefined,
   }

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-calcular-tres-bimestres',
-  templateUrl: './calcular-tres-bimestres.component.html',
-  styleUrls: ['./calcular-tres-bimestres.component.css']
+  selector: 'app-calculate-minimum-four-bimester',
+  templateUrl: './calculate-minimum-four-bimester.component.html',
+  styleUrls: ['./calculate-minimum-four-bimester.component.css']
 })
-export class CalcularTresBimestresComponent implements OnInit {
+export class CalculateMinimumFourBimester implements OnInit {
   
   grades = {
     firstBimester: undefined,
@@ -44,7 +44,6 @@ export class CalcularTresBimestresComponent implements OnInit {
     const weightBimester3 = 3;
     const result: number = (minimumTotal - 
       ((gradeBimester1 * weightBimester1And2) + (gradeBimester2 * weightBimester1And2) + (gradeBimester3 * weightBimester3))) / 3
-    console.log(result);
     return isNaN(result) ? undefined : + result.toFixed(2)
   }
 

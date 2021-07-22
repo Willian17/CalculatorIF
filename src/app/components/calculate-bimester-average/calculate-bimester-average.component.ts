@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-calcular-um-bimestre',
-  templateUrl: './calcular-um-bimestre.component.html',
-  styleUrls: ['./calcular-um-bimestre.component.css']
+  selector: 'app-calculate-bimester-average',
+  templateUrl: './calculate-bimester-average.component.html',
+  styleUrls: ['./calculate-bimester-average.css']
 })
-export class CalcularUmBimestreComponent implements OnInit {
+export class CalculateBimesterAverage implements OnInit {
   grades = {
     grade1: undefined,
     grade2: undefined,

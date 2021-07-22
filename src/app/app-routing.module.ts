@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CalcularPFComponent } from './components/calcular-pf/calcular-pf.component';
-import { CalcularTodosBimestresComponent } from './components/calcular-todos-bimestres/calcular-todos-bimestres.component';
-import { CalcularTresBimestresComponent } from './components/calcular-tres-bimestres/calcular-tres-bimestres.component';
-import { CalcularUmBimestreComponent } from './components/calcular-um-bimestre/calcular-um-bimestre.component';
+import { CalculatePFComponent } from './components/calculate-pf/calculate-pf.component';
+import { CalculateGeneralAvarage } from './components/calculate-general-average/calculate-general-average.component';
+import { CalculateMinimumFourBimester } from './components/calculate-minimum-four-bimester/calculate-minimum-four-bimester.component';
+import { CalculateBimesterAverage } from './components/calculate-bimester-average/calculate-bimester-average.component';
 
 const routes: Routes = [
   {
     path: "",
-    component: CalcularTresBimestresComponent
+    component: CalculateMinimumFourBimester
   },
   {
-    path: "todos/bimestres",
-    component: CalcularTodosBimestresComponent
+    path: "general-avarage",
+    component: CalculateGeneralAvarage
   },
   {
-    path: "um/bimestre",
-    component: CalcularUmBimestreComponent
+    path: "bimester-avarage",
+    component: CalculateBimesterAverage
   },
   {
     path: "pf",
-    component: CalcularPFComponent
+    component: CalculatePFComponent
   }
 ];
 
