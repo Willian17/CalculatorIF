@@ -17,6 +17,7 @@ import { CalculateGeneralAvarage } from './components/calculate-general-average/
 import { CalculateMinimumFourBimester } from './components/calculate-minimum-four-bimester/calculate-minimum-four-bimester.component';
 import { CalculateBimesterAverage } from './components/calculate-bimester-average/calculate-bimester-average.component';
 import { CalculatePFComponent } from './components/calculate-pf/calculate-pf.component';
+import { TesterComponent } from './components/tester/tester.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CalculatePFComponent } from './components/calculate-pf/calculate-pf.com
     CalculateGeneralAvarage,
     CalculateMinimumFourBimester,
     CalculateBimesterAverage,
-    CalculatePFComponent
+    CalculatePFComponent,
+    TesterComponent
   ],
   imports: [
     BrowserModule,
