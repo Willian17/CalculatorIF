@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GradeMinimumGradeForFourBimesterModel } from 'src/shared/models/GradeMinimumGradeForFourBimesterModel';
 
 @Component({
   selector: 'app-calculate-minimum-four-bimester',
@@ -7,11 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculateMinimumFourBimester implements OnInit {
   
-  grades = {
-    firstBimester: undefined,
-    secondBimester: undefined,
-    thirdBimester: undefined,
-  }
+  grades = new GradeMinimumGradeForFourBimesterModel();
 
   minimumGradeForFourBimester: number;
   
@@ -43,7 +40,7 @@ export class CalculateMinimumFourBimester implements OnInit {
     const weightBimester1And2 = 2;
     const weightBimester3 = 3;
     const result: number = (minimumTotal - 
-      ((gradeBimester1 * weightBimester1And2) + (gradeBimester2 * weightBimester1And2) + (gradeBimester3 * weightBimester3))) / 3
+      ((+gradeBimester1 * weightBimester1And2) + (+gradeBimester2 * weightBimester1And2) + (+gradeBimester3 * weightBimester3))) / 3
     return isNaN(result) ? undefined : + result.toFixed(2)
   }
 

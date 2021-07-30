@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GradeCalculatePFModel } from 'src/shared/models/GradeCalculatePFModel';
 
 @Component({
   selector: 'app-calculate-pf',
@@ -6,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculate-pf.component.css']
 })
 export class CalculatePFComponent implements OnInit {
-  grades = {
-    generalAverage: undefined,
-  }
+  grades = new GradeCalculatePFModel();
   minimumFromPF: number;
 
   constructor() { }
@@ -30,7 +29,7 @@ export class CalculatePFComponent implements OnInit {
   
   calculateMinimumFromPF(generalAverage: number): number{
     const endAverage = 10;
-    const result: number = endAverage - generalAverage
+    const result: number = endAverage - +generalAverage
     return isNaN(result) ? undefined : +result.toFixed(2)
   }
 
