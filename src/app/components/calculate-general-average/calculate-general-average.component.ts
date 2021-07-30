@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GradeCalculateGeneralAverageModel } from 'src/shared/models/GradeCalculateGeneralAverageModel';
 
 @Component({
   selector: 'app-calculate-general-average',
@@ -6,13 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculate-general-average.component.css']
 })
 export class CalculateGeneralAvarage implements OnInit {
-  grades = {
-    firstBimester: undefined,
-    secondBimester: undefined,
-    thirdBimester: undefined,
-    fourthBimester: undefined,
-  }
-
+  grades = new GradeCalculateGeneralAverageModel();
   generalAverage: number;
 
   constructor() { }
@@ -37,7 +32,7 @@ export class CalculateGeneralAvarage implements OnInit {
    }
 
    calculateGeneralAverage(notaBimester1: number, notaBimester2:number, notaBimester3:number, notaBimester4:number): number{
-    const generalAverage: number = (60 - ((notaBimester1 * 2) + (notaBimester2 * 2) + (notaBimester3 * 3) + (notaBimester4 * 3)))
+    const generalAverage: number = ((+notaBimester1 * 2) + (+notaBimester2 * 2) + (+notaBimester3 * 3) + (+notaBimester4 * 3)) / 10;
     return isNaN(generalAverage) ? undefined : +generalAverage.toFixed(2)
   }
 

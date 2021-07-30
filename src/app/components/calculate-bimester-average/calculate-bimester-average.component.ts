@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GradeCalculateAverageModel } from 'src/shared/models/GradeCalculateAverageModel';
 
 @Component({
   selector: 'app-calculate-bimester-average',
@@ -6,12 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculate-bimester-average.css']
 })
 export class CalculateBimesterAverage implements OnInit {
-  grades = {
-    grade1: undefined,
-    grade2: undefined,
-    grade3: undefined,
-    attitudinal: undefined,
-  }
+  grades = new GradeCalculateAverageModel();
 
   avarageBimester: number;
   
@@ -40,10 +36,10 @@ export class CalculateBimesterAverage implements OnInit {
   
   calculateAvarageBimester(grade1: number, grade2:number, grade3:number | undefined, attitudinal:number): number{
     const sizeGradeAvarage = 0.8;
-    const avarageBimester: number = grade3 == undefined || grade3 == null ? 
-    (((grade1 + grade2 )/ 2) * sizeGradeAvarage) + attitudinal : 
-    (((grade1 + grade2 + grade3) / 3) * sizeGradeAvarage) + attitudinal
-    return isNaN(avarageBimester) ? undefined : +avarageBimester.toFixed(2)
+    const avarageBimester: number = !grade3 ? 
+    (((+grade1 + +grade2 ) / 2) * sizeGradeAvarage) + +attitudinal : 
+    (((+grade1 + +grade2 + +grade3) / 3) * sizeGradeAvarage) + +attitudinal
+    return isNaN(avarageBimester) || typeof avarageBimester === 'string' ? undefined : +avarageBimester.toFixed(2)
   }
 
   makeSound(avarageBimester: number){

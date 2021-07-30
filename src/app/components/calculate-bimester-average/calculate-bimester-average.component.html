@@ -9,7 +9,8 @@
                     max="10" 
                     placeholder="Nota 1" 
                     [(ngModel)]="grades.grade1" 
-                    name="grade1">
+                    name="grade1"
+                    id="grade1">
             </mat-form-field>
     
             <mat-form-field>
@@ -20,7 +21,8 @@
                     max="10" 
                     placeholder="Nota 2" 
                     [(ngModel)]="grades.grade2"
-                    name="grade2">
+                    name="grade2"
+                    id="grade2">
             </mat-form-field>
     
             <mat-form-field>
@@ -30,7 +32,8 @@
                     max="10" 
                     placeholder="Nota 3" 
                     [(ngModel)]="grades.grade3" 
-                    name="grade3">
+                    name="grade3"
+                    id="grade3">
             </mat-form-field>
             <mat-form-field>
                 <input 
@@ -40,10 +43,11 @@
                     max="10" 
                     placeholder="atitudinal" 
                     [(ngModel)]="grades.attitudinal" 
-                    name="grade3">
+                    name="attitudinal"
+                    id="attitudinal">
             </mat-form-field>
     
-            <button mat-raised-button color="primary" type="submit">
+            <button mat-raised-button color="primary" type="submit" id="calculate">
                 Calculate
             </button>
         </form>
@@ -52,7 +56,7 @@
     <mat-card *ngIf="avarageBimester != undefined ">
         <mat-card-content class="card-content">
             <div class="nota">
-                Você tem uma média <strong>{{avarageBimester}}</strong>
+                Você tem uma média <strong id="result">{{avarageBimester}}</strong>
             </div>
             <img mat-card-image class="image" src="https://falaserioamigaa.files.wordpress.com/2016/03/gifs-so-gifs-engracados-2.gif">
         </mat-card-content>
