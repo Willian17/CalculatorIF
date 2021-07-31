@@ -1,29 +1,35 @@
 .app {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-color: #f8f1f1;
-}
-.card-app{
-    padding: 20px;
-    background-color: #16c79a   ;
-}
-.card-app .title  {
-    text-align: center;
-    color: #fff;
-}
-.card-app .subtitle  {
-    text-align: center;
-    color: #f8f1f1;
+    background-color: #F0F0F5;
 }
 
-.container-cards{
+.content-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card-app{
+    padding: 56px 63px;
+    background-color: #fff   ;
+    margin-top: 3rem;
+    width: 58vw;
+    box-shadow: none;
+    border-radius: 8;
+}
+.card-app .title  {
+    color: #0F241D;
+    font-size: 2.3rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* .container-cards{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .menu-container{
     display: flex;

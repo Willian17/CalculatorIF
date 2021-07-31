@@ -17,7 +17,8 @@ import { CalculateGeneralAvarage } from './components/calculate-general-average/
 import { CalculateMinimumFourBimester } from './components/calculate-minimum-four-bimester/calculate-minimum-four-bimester.component';
 import { CalculateBimesterAverage } from './components/calculate-bimester-average/calculate-bimester-average.component';
 import { CalculatePFComponent } from './components/calculate-pf/calculate-pf.component';
-import { TesterComponent } from './components/tester/tester.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { TesterComponent } from './components/tester/tester.component';
     CalculateMinimumFourBimester,
     CalculateBimesterAverage,
     CalculatePFComponent,
-    TesterComponent
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +41,7 @@ import { TesterComponent } from './components/tester/tester.component';
     MatCardModule,
     MatMenuModule,
     MatIconModule,
-    MatBadgeModule
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

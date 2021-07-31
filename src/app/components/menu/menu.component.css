@@ -1,0 +1,22 @@
+.mat-toolbar.mat-toolbar-single-row  {
+    background-color: #fff;
+    border-bottom: 1px solid #E4E4E4;
+    padding: 25px 0 !important;
+}
+
+.menu-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-container .menu-items {
+    width: 22rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-container .menu-items .label-menu-item {
+    font-family: 'DM Sans', sans-serif;
+}

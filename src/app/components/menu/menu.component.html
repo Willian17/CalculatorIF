@@ -1,0 +1,38 @@
+<mat-toolbar>
+    <div class="menu-container">
+        <div class="logo">
+            <img src="assets/logo.svg" alt="CalculadoraIF">
+        </div>
+        <div class="menu-items">
+            <button mat-icon-button matBadgeColor="warn" [matMenuTriggerFor]="menuMinimum">
+                <span class="label-menu-item">Mínimo</span>
+                <img src="assets/icon-down.svg" alt="Icone para baixo">
+            </button>
+            <mat-menu #menuMinimum="matMenu">
+                <button mat-menu-item [routerLink]="['']">
+                    <mat-icon>navigate_next</mat-icon>
+                    <span>4° bimestre</span>
+                </button>
+                <button mat-menu-item [routerLink]="['/pf']">
+                    <mat-icon>navigate_next</mat-icon>
+                    <span>PF</span>
+                </button>
+            </mat-menu>
+        
+            <button mat-icon-button matBadgeColor="warn" [matMenuTriggerFor]="menuAverage">
+                <span class="label-menu-item">Média</span>
+                <img src="assets/icon-down.svg" alt="Icone para baixo">
+            </button>
+            <mat-menu #menuAverage="matMenu">
+                <button mat-menu-item [routerLink]="['/general-avarage']">
+                    <mat-icon>navigate_next</mat-icon>
+                    <span>Média Geral</span>
+                </button>
+                <button mat-menu-item [routerLink]="['/bimester-avarage']">
+                  <mat-icon>navigate_next</mat-icon>
+                  <span>Média bimestral</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</mat-toolbar>

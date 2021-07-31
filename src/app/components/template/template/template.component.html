@@ -1,37 +1,12 @@
 <div class="app">
-  
+  <app-menu></app-menu>
+  <div class="content-container">
     <mat-card class="card-app">
-        <mat-card-title class="title">  Calculadora de notas do IF </mat-card-title>
-        <mat-card-subtitle class="subtitle"> {{subtitle}}</mat-card-subtitle>
-        <div class="menu-container">
-          <button mat-icon-button matBadge="1" matBadgeColor="warn" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-        
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item [routerLink]="['']">
-                  <mat-icon>navigate_next</mat-icon>
-                  <span>Mínimo no 4° bimestre</span>
-              </button>
-              <button mat-menu-item [routerLink]="['/general-avarage']">
-                  <mat-icon>navigate_next</mat-icon>
-                  <span>Calcular Média Geral</span>
-              </button>
-              <button mat-menu-item [routerLink]="['/bimester-avarage']">
-                <mat-icon>navigate_next</mat-icon>
-                <span>Calcular média bimestral</span>
-              </button>
-              <button mat-menu-item [routerLink]="['/pf']">
-                <mat-icon color="warn">navigate_next</mat-icon>
-                <span>Calcular mínimo na PF</span>
-              </button>
-            </mat-menu>
-            </div>
-          
+        <mat-card-title class="title"> {{title}}</mat-card-title>
         <div class="container-cards">
             <ng-content></ng-content>
         </div>
-
     </mat-card>
+  </div>
 </div>
 
