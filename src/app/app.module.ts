@@ -24,7 +24,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CalculateMinimumThirdFourBimesterComponent } from './components/calculate-minimum-third-four-bimester/calculate-minimum-third-four-bimester.component';
-import { CalculateEndAverageComponent } from './components/calculate-end-average/calculate-end-average.component'
+import { CalculateEndAverageComponent } from './components/calculate-end-average/calculate-end-average.component';
+import { CalculateApprovedOfThirdBimesterComponent } from './components/calculate-approved-of-third-bimester/calculate-approved-of-third-bimester.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CalculateEndAverageComponent } from './components/calculate-end-average
     CalculatePFComponent,
     MenuComponent,
     CalculateMinimumThirdFourBimesterComponent,
-    CalculateEndAverageComponent
+    CalculateEndAverageComponent,
+    CalculateApprovedOfThirdBimesterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-<app-template title="Mínimo para ser Aprovado no 4° bimestre">
+<app-template title="Mínimo para ser Aprovado no 3° bimestre">
     <form class="form" (ngSubmit)="calculate()">
         <mat-form-field>
             <input 
@@ -22,17 +22,6 @@
                 name="grade2">
         </mat-form-field>
 
-        <mat-form-field>
-            <input 
-                required
-                matInput 
-                type="number" 
-                max="10" 
-                placeholder="Média 3° bimestre" 
-                [(ngModel)]="grades.thirdBimester" 
-                name="grade3">
-        </mat-form-field>
-
         <div class="container-button">
             <button type="submit" class="calculate">
                 Calcular Mínimo
@@ -40,4 +29,3 @@
         </div>
     </form>
 </app-template>
-

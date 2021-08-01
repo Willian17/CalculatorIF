@@ -18,6 +18,10 @@
                         <mat-icon>navigate_next</mat-icon>
                         <span>3° e 4° bimestre</span>
                     </button>
+                    <button mat-menu-item [routerLink]="['/approved-third-bimester']">
+                        <mat-icon>navigate_next</mat-icon>
+                        <span>3° Bimestre</span>
+                    </button>
                     <button mat-menu-item [routerLink]="['/minimum-four-bimester']">
                         <mat-icon>navigate_next</mat-icon>
                         <span>4° bimestre</span>
@@ -56,6 +60,9 @@
           <mat-nav-list>
             <button mat-menu-item [routerLink]="['/']" [class.menu-selected]="menuSelected(['/'])">
                 <span>Mínimo no 3° e 4° bimestre</span>
+            </button>
+            <button mat-menu-item [routerLink]="['/approved-third-bimester']" [class.menu-selected]="menuSelected(['/approved-third-bimester'])">
+                <span>Mínimo no 3° bimestre</span>
             </button>
             <button mat-menu-item [routerLink]="['/minimum-four-bimester']" [class.menu-selected]="menuSelected(['/minimum-four-bimester'])">
                 <span>Mínimo no 4° bimestre</span>

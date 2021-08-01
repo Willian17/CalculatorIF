@@ -6,6 +6,7 @@ import { CalculateMinimumFourBimester } from './components/calculate-minimum-fou
 import { CalculateBimesterAverage } from './components/calculate-bimester-average/calculate-bimester-average.component';
 import { CalculateMinimumThirdFourBimesterComponent } from './components/calculate-minimum-third-four-bimester/calculate-minimum-third-four-bimester.component';
 import { CalculateEndAverageComponent } from './components/calculate-end-average/calculate-end-average.component';
+import { CalculateApprovedOfThirdBimesterComponent } from './components/calculate-approved-of-third-bimester/calculate-approved-of-third-bimester.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: "minimum-four-bimester",
     component: CalculateMinimumFourBimester
+  },
+  {
+    path: "approved-third-bimester",
+    component: CalculateApprovedOfThirdBimesterComponent
   },
   {
     path: "general-avarage",
