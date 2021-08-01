@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CalculateEndAverageComponent } from './calculate-end-average.component';
 
@@ -8,7 +10,11 @@ describe('CalculateEndAverageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CalculateEndAverageComponent ]
+      declarations: [ CalculateEndAverageComponent ],
+      imports: [
+        MatSnackBarModule,
+        BrowserAnimationsModule
+      ],
     })
     .compileComponents();
   });

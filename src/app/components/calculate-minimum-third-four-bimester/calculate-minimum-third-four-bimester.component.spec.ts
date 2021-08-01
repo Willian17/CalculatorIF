@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CalculateMinimumThirdFourBimesterComponent } from './calculate-minimum-third-four-bimester.component';
 
@@ -8,7 +10,11 @@ describe('CalculateMinimumThirdFourBimesterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CalculateMinimumThirdFourBimesterComponent ]
+      declarations: [ CalculateMinimumThirdFourBimesterComponent ],
+      imports: [
+        MatSnackBarModule,
+        BrowserAnimationsModule
+      ],
     })
     .compileComponents();
   });

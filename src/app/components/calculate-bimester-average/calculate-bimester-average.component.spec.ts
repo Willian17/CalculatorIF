@@ -1,5 +1,7 @@
 import { ComponentFixture, fakeAsync, flushMicrotasks, TestBed, tick } from '@angular/core/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { By } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CalculateBimesterAverage } from './calculate-bimester-average.component';
 
@@ -9,7 +11,11 @@ describe('Calculate Bimester Average Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CalculateBimesterAverage ]
+      declarations: [ CalculateBimesterAverage ],
+      imports: [
+        MatSnackBarModule,
+        BrowserAnimationsModule
+      ],
     })
     .compileComponents();
   });
