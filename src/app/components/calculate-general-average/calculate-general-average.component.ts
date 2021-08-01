@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GradeCalculateGeneralAverageModel } from 'src/shared/models/GradeCalculateGeneralAverageModel';
 
 @Component({
@@ -10,13 +11,14 @@ export class CalculateGeneralAvarage implements OnInit {
   grades = new GradeCalculateGeneralAverageModel();
   generalAverage: number;
 
-  constructor() { }
+  constructor(
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit(): void {
   }
 
   calculate(): void {
-    const makeSoundMs = 1000;
     const {firstBimester, secondBimester, thirdBimester, fourthBimester} = this.grades
     this.generalAverage = this.calculateGeneralAverage(
       firstBimester, 
@@ -24,11 +26,7 @@ export class CalculateGeneralAvarage implements OnInit {
       thirdBimester, 
       fourthBimester
     )
-    if(this.generalAverage !== undefined){ 
-      setTimeout(()=>{
-        this.makeSound(+this.generalAverage)
-      }, makeSoundMs)
-    }  
+    this.showResult();
    }
 
    calculateGeneralAverage(notaBimester1: number, notaBimester2:number, notaBimester3:number, notaBimester4:number): number{
@@ -36,21 +34,14 @@ export class CalculateGeneralAvarage implements OnInit {
     return isNaN(generalAverage) ? undefined : +generalAverage.toFixed(2)
   }
 
-   makeSound(generalAverage: number){
-     const approved = generalAverage <= 0;
-     const baseUrlAudio =  '../../../assets'
-     const pauseSoundMs = 5000;
-     if(approved){
-      var audio = new Audio(`${baseUrlAudio}/tetra.mp3`)
-     } else {
-      var audio = new Audio(`${baseUrlAudio}/sifudeu.mp3`)
-     }
-     audio.play()
-     
-     setTimeout(()=> {
-      audio.pause()
-    }, pauseSoundMs)
-   }
- 
+  showResult() { 
+    if(this.generalAverage){
+      return this.openSnackBarResult(`Média Geral: ${this.generalAverage}`, 'X')
+    }
+  }
+
+  openSnackBarResult(message: string, action: string) {
+    this.snackBar.open(message, action);
+  }
 
 }

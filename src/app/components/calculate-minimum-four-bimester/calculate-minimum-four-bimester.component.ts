@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GradeMinimumGradeForFourBimesterModel } from 'src/shared/models/GradeMinimumGradeForFourBimesterModel';
 
 @Component({
@@ -12,7 +13,9 @@ export class CalculateMinimumFourBimester implements OnInit {
 
   minimumGradeForFourBimester: number;
   
-  constructor(){
+  constructor(
+    private snackBar: MatSnackBar
+  ){
 
   }
   
@@ -20,20 +23,15 @@ export class CalculateMinimumFourBimester implements OnInit {
   }
   
   calculate(): void {
-    const makeSoundMs = 1000;
     const {firstBimester, secondBimester, thirdBimester} = this.grades
     this.minimumGradeForFourBimester = this.calculateMinimumGradeForFourBimester(
       firstBimester, 
       secondBimester, 
       thirdBimester 
     )
-    if(this.minimumGradeForFourBimester !== undefined){
-      setTimeout(()=>{
-          this.makeSound(+this.minimumGradeForFourBimester)
-      }, makeSoundMs)
-    }
-
+    this.showResult();
   }
+
 
   calculateMinimumGradeForFourBimester(gradeBimester1: number, gradeBimester2:number, gradeBimester3:number): number { 
     const minimumTotal = 60;
@@ -44,22 +42,29 @@ export class CalculateMinimumFourBimester implements OnInit {
     return isNaN(result) ? undefined : + result.toFixed(2)
   }
 
-  makeSound(result: number){
-    const needAverage =  result > 0 && result <= 10;
-    const approved = result <= 0;
-    const pauseSoundMs = 5000;
-    const baseUrlAudio =  '../../../assets'
-    if(needAverage){
-     var audio = new Audio(`${baseUrlAudio}/mais_ou_menos.mp3`)
-    } else if(approved) {
-     var audio = new Audio(`${baseUrlAudio}/tetra.mp3`)
-    } else {
-      var audio = new Audio(`${baseUrlAudio}/sifudeu.mp3`)
+  showResult() { 
+    const isNotApproved = this.minimumGradeForFourBimester > 0 && this.minimumGradeForFourBimester <= 10;
+    const isApproved = this.minimumGradeForFourBimester <= 0;
+    const isPF = this.minimumGradeForFourBimester > 10;
+    let message: string = undefined;
+    if (isNotApproved) {
+      message = `Nota Mínima no 4° bimestre: ${this.minimumGradeForFourBimester}`;
     }
-    audio.play()
-    setTimeout(()=> {
-      audio.pause()
-    }, pauseSoundMs)
+    if (isApproved) {
+      message = `Você foi aprovado(a)`;
+    }
+    if (isPF) {
+      message = `Você está de PF`;
+    }
+    if(message) {
+     return this.openSnackBarResult(message, 'X')
+    }
   }
+
+  openSnackBarResult(message: string, action: string) {
+    this.snackBar.open(message, action);
+  }
+
+
 
 }

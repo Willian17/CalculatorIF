@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GradeCalculatePFModel } from 'src/shared/models/GradeCalculatePFModel';
 
 @Component({
@@ -10,20 +11,18 @@ export class CalculatePFComponent implements OnInit {
   grades = new GradeCalculatePFModel();
   minimumFromPF: number;
 
-  constructor() { }
+  constructor(
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit(): void {
   }
 
   calculate(): void {
-    const makeSoundMs = 1000;
-  
     this.minimumFromPF = this.calculateMinimumFromPF(
       this.grades.generalAverage
     )
-    setTimeout(()=>{
-      this.makeSound(+this.minimumFromPF)
-    }, makeSoundMs)
+    this.showResult();
   }
 
   
@@ -33,19 +32,19 @@ export class CalculatePFComponent implements OnInit {
     return isNaN(result) ? undefined : +result.toFixed(2)
   }
 
-  makeSound(result: number){
-    const needFromPF = result > 4;
-    const baseUrlAudio =  '../../../assets'
-    const pauseSoundMs = 5000;
-    if(needFromPF){
-      var audio = new Audio(`${baseUrlAudio}/sifudeu.mp3`)
+  showResult() { 
+    const needPF = this.minimumFromPF > 4;
+    let message: string = undefined;
+    if (needPF) {
+      message = `Nota Mínima na PF: ${this.minimumFromPF}`;
     } else {
-      var audio = new Audio(`${baseUrlAudio}/tetra.mp3`)
+      message = `Você não precisa de PF`;
     }
-    audio.play()
-    setTimeout(()=> {
-      audio.pause()
-    }, pauseSoundMs)
+     return this.openSnackBarResult(message, 'X')
+  }
+
+  openSnackBarResult(message: string, action: string) {
+    this.snackBar.open(message, action);
   }
 
 }

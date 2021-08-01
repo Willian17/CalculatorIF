@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CalculateMinimumFourBimester } from './calculate-minimum-four-bimester.component';
 
@@ -8,7 +10,11 @@ describe('Calculate Minimum Four Bimester component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CalculateMinimumFourBimester ]
+      declarations: [ CalculateMinimumFourBimester ],
+      imports: [
+        MatSnackBarModule,
+        BrowserAnimationsModule
+      ],
     })
     .compileComponents();
   });
@@ -78,8 +84,9 @@ describe('Calculate Minimum Four Bimester component', () => {
     expect(component.minimumGradeForFourBimester).toBe(6);
   })
   
-  it('should called function MinimumGradeForFourBimester in calculate', () => {
+  it('should called function MinimumGradeForFourBimester and showResult in calculate', () => {
     spyOn(component, 'calculateMinimumGradeForFourBimester');
+    spyOn(component, 'showResult');
     component.grades = {
       firstBimester: 6,
       secondBimester: 6,
@@ -87,5 +94,6 @@ describe('Calculate Minimum Four Bimester component', () => {
     }
     const result = component.calculate();
     expect(component.calculateMinimumGradeForFourBimester).toHaveBeenCalled();
+    expect(component.showResult).toHaveBeenCalled();
   })
 });

@@ -1,5 +1,4 @@
-<app-template title="Calcular a média bimestral">
-    <mat-card class="card-calculator card-content">
+<app-template title="Média bimestral">
         <form class="form" (ngSubmit)="calculate()">
             <mat-form-field>
                 <input 
@@ -47,20 +46,12 @@
                     id="attitudinal">
             </mat-form-field>
     
-            <button mat-raised-button color="primary" type="submit" id="calculate">
-                Calculate
-            </button>
-        </form>
-    </mat-card>
-
-    <mat-card *ngIf="avarageBimester != undefined ">
-        <mat-card-content class="card-content">
-            <div class="nota">
-                Você tem uma média <strong id="result">{{avarageBimester}}</strong>
+            <div class="container-button">
+                <button type="submit" class="calculate">
+                    Calcular Média
+                </button>
             </div>
-            <img mat-card-image class="image" src="https://falaserioamigaa.files.wordpress.com/2016/03/gifs-so-gifs-engracados-2.gif">
-        </mat-card-content>
-    </mat-card>
+        </form>
 </app-template>
 
 

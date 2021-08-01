@@ -1,22 +1,69 @@
-.card-calculator{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 20px 20px 0;
-}
-.nota{
-    text-align: center;
-}
-.mat-card .card-content{
-    max-width: 200px;
-}
-
 .form{
     display: flex;
     flex-direction: column;
+    margin: 40px 0;
 }
 
-.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary{
-    background-color: #19456b;
+::ng-deep .mat-form-field-underline {
+    height: 0 !important;
+    display: none;
+}
+
+.form .mat-input-element {
+    background-color: #F0F0F5 !important;
+    color: #0F241D;
+    margin-top: 7px;
+    padding: 1.2rem 0 1.2rem 1.2rem;
+    padding-right: 0;
+    border-radius: 8px;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+    top: 3.3em;
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #6C6C80;
+}
+
+::ng-deep .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-2.7em) scale(0.85) perspective(100px) translateZ(0.001px);
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #6C6C80;
+}
+
+
+.container-button {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 1rem;
+}
+.container-button button.calculate {
+    width: 30%;
+    padding: 1.2rem 0;
+    background-color: #69B99D;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.container-button button.calculate:hover {
+    background-color: #5a9c85;
+}
+
+
+::ng-deep .mat-simple-snackbar span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@media (max-width: 800px) {
+    .container-button button.calculate{
+        width: 100%;
+    }
 }

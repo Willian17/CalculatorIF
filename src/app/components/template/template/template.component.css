@@ -17,19 +17,14 @@
     margin-top: 3rem;
     width: 58vw;
     box-shadow: none;
-    border-radius: 8;
+    border-radius: 8px;
 }
 .card-app .title  {
     color: #0F241D;
     font-size: 2.3rem;
     font-family: 'Ubuntu', sans-serif;
+    line-height: 2rem;
 }
-
-/* .container-cards{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 .menu-container{
     display: flex;
@@ -40,5 +35,11 @@
 @media (max-width: 1000px){
     .container-cards{
         flex-direction: column;
+    }
+}
+@media (max-width: 768px){
+    .card-app .title  {
+        font-size: 1.8rem;
+        text-align: center;
     }
 }

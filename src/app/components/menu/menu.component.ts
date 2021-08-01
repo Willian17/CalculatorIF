@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  showSidenav: boolean = false;
+
+  @ViewChild('sidenav') sidenav: any;
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  menuSelected(paths: string[]): boolean {
+    return paths.includes(this.router.url)
+  }
+
+  showOrHideSidenav() {
+    this.showSidenav = !this.showSidenav;
+    this.sidenav.toggle();
   }
 
 }

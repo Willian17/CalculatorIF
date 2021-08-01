@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
 
 import { MenuComponent } from './menu.component';
 
@@ -8,7 +10,11 @@ describe('MenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuComponent ]
+      declarations: [ MenuComponent ],
+      imports: [
+        RouterModule.forRoot([]),
+        MatMenuModule
+      ],
     })
     .compileComponents();
   });
@@ -19,7 +25,7 @@ describe('MenuComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create component', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,35 +1,20 @@
-<app-template title="Calcular a nota mínima na PF para ser aprovado">
-    <mat-card class="card-calculator card-content">
-        <form class="form" (ngSubmit)="calculate()">
-            <mat-form-field>
-                <input 
-                    matInput 
-                    required
-                    type="number" 
-                    max="10" 
-                    placeholder="Média Geral" 
-                    [(ngModel)]="grades.generalAverage" 
-                    name="grade1">
-            </mat-form-field>
-    
-            <button mat-raised-button color="primary" type="submit">
-                Calculate
+<app-template title="Mínimo na PF">
+    <form class="form" (ngSubmit)="calculate()">
+        <mat-form-field>
+            <input 
+                matInput 
+                required
+                type="number" 
+                max="10" 
+                placeholder="Média Geral" 
+                [(ngModel)]="grades.generalAverage" 
+                name="grade1">
+        </mat-form-field>
+        <div class="container-button">
+            <button type="submit" class="calculate">
+                Calcular Mínimo
             </button>
-        </form>
-    </mat-card>
-
-    <mat-card *ngIf="minimumFromPF != undefined">
-        <mat-card-content *ngIf="minimumFromPF > 4" class="card-content">
-            <div class="nota">
-                Você precisa de {{minimumFromPF}} na PF para passar de ano
-            </div>
-            <img mat-card-image class="image" src="https://thumbs.gfycat.com/InformalOldButterfly-size_restricted.gif">
-        </mat-card-content>
-        <mat-card-content *ngIf="minimumFromPF <= 4" class="card-content">
-            <div class="nota">
-                Vocẽ já passou de ano, não precisa de PF
-            </div>
-            <img mat-card-image class="image" src="https://media1.giphy.com/media/d1OcDN64mZsQfj2q3G/giphy.gif">
-        </mat-card-content>
-    </mat-card>
+        </div>
+    </form>
 </app-template>
+

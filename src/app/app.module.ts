@@ -19,6 +19,10 @@ import { CalculateBimesterAverage } from './components/calculate-bimester-averag
 import { CalculatePFComponent } from './components/calculate-pf/calculate-pf.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatCardModule,
     MatMenuModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSnackBarModule,
+    MatSidenavModule,
+    FlexLayoutModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
