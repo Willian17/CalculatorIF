@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { GradeMinimumGradeForFourBimesterModel } from 'src/shared/models/GradeMinimumGradeForFourBimesterModel';
+import { roundFloat } from 'src/shared/utils/roundFloat';
 
 @Component({
   selector: 'app-calculate-minimum-four-bimester',
@@ -39,7 +40,7 @@ export class CalculateMinimumFourBimester implements OnInit {
     const weightBimester3 = 3;
     const result: number = (minimumTotal - 
       ((+gradeBimester1 * weightBimester1And2) + (+gradeBimester2 * weightBimester1And2) + (+gradeBimester3 * weightBimester3))) / 3
-    return isNaN(result) ? undefined : + result.toFixed(2)
+    return isNaN(result) ? undefined : roundFloat(result, -2)
   }
 
   showResult() { 
@@ -64,7 +65,4 @@ export class CalculateMinimumFourBimester implements OnInit {
   openSnackBarResult(message: string, action: string) {
     this.snackBar.open(message, action);
   }
-
-
-
 }

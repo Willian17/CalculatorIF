@@ -22,7 +22,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { FlexLayoutModule } from '@angular/flex-layout'
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { CalculateMinimumThirdFourBimesterComponent } from './components/calculate-minimum-third-four-bimester/calculate-minimum-third-four-bimester.component';
+import { CalculateEndAverageComponent } from './components/calculate-end-average/calculate-end-average.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     CalculateMinimumFourBimester,
     CalculateBimesterAverage,
     CalculatePFComponent,
-    MenuComponent
+    MenuComponent,
+    CalculateMinimumThirdFourBimesterComponent,
+    CalculateEndAverageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { GradeCalculatePFModel } from 'src/shared/models/GradeCalculatePFModel';
+import { roundFloat } from 'src/shared/utils/roundFloat';
 
 @Component({
   selector: 'app-calculate-pf',
@@ -29,7 +30,7 @@ export class CalculatePFComponent implements OnInit {
   calculateMinimumFromPF(generalAverage: number): number{
     const endAverage = 10;
     const result: number = endAverage - +generalAverage
-    return isNaN(result) ? undefined : +result.toFixed(2)
+    return isNaN(result) ? undefined : roundFloat(result, -2)
   }
 
   showResult() { 

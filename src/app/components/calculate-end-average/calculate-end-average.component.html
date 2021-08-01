@@ -1,0 +1,31 @@
+<app-template title="Média Final">
+    <form class="form" (ngSubmit)="calculate()">
+        <mat-form-field>
+            <input 
+                matInput 
+                required
+                type="number" 
+                max="10" 
+                placeholder="Média Geral" 
+                [(ngModel)]="grades.generalAverage" 
+                name="grade1">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input 
+                required
+                matInput 
+                type="number" 
+                max="10" 
+                placeholder="Nota na PF" 
+                [(ngModel)]="grades.pf"
+                name="grade2">
+        </mat-form-field>
+
+        <div class="container-button">
+            <button type="submit" class="calculate">
+                Calcular Média
+            </button>
+        </div>
+    </form>
+</app-template>

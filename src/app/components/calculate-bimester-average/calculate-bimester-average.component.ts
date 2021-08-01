@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { GradeCalculateAverageModel } from 'src/shared/models/GradeCalculateAverageModel';
+import { roundFloat } from 'src/shared/utils/roundFloat';
 
 @Component({
   selector: 'app-calculate-bimester-average',
@@ -37,7 +38,7 @@ export class CalculateBimesterAverage implements OnInit {
     const avarageBimester: number = !grade3 ? 
     (((+grade1 + +grade2 ) / 2) * sizeGradeAvarage) + +attitudinal : 
     (((+grade1 + +grade2 + +grade3) / 3) * sizeGradeAvarage) + +attitudinal
-    return isNaN(avarageBimester) || typeof avarageBimester === 'string' ? undefined : +avarageBimester.toFixed(2)
+    return isNaN(avarageBimester) || typeof avarageBimester === 'string' ? undefined : roundFloat(avarageBimester, -2)
   }
   showResult() { 
     if(this.avarageBimester){

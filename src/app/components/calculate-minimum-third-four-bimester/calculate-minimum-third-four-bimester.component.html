@@ -1,0 +1,31 @@
+<app-template title="Mínimo no 3° e 4° bimestre">
+    <form class="form" (ngSubmit)="calculate()">
+        <mat-form-field>
+            <input 
+                matInput 
+                required
+                type="number" 
+                max="10" 
+                placeholder="Média 1° bimestre" 
+                [(ngModel)]="grades.firstBimester" 
+                name="grade1">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input 
+                required
+                matInput 
+                type="number" 
+                max="10" 
+                placeholder="Média 2° bimestre" 
+                [(ngModel)]="grades.secondBimester"
+                name="grade2">
+        </mat-form-field>
+
+        <div class="container-button">
+            <button type="submit" class="calculate">
+                Calcular Mínimo
+            </button>
+        </div>
+    </form>
+</app-template>

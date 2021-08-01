@@ -8,12 +8,17 @@
                 <mat-icon color="accent">menu</mat-icon>
             </button>
             <div class="menu-items" fxShow="true" fxHide.lt-md>
-                <button mat-icon-button matBadgeColor="warn" [matMenuTriggerFor]="menuMinimum" [class.menu-selected]="menuSelected(['/', '/pf'])">
+                <button mat-icon-button matBadgeColor="warn" [matMenuTriggerFor]="menuMinimum" 
+                    [class.menu-selected]="menuSelected(['/', '/pf', 'minimum-four-bimester'])">
                     <span class="label-menu-item">Mínimo</span>
                     <img src="assets/icon-down.svg" alt="Icone para baixo">
                 </button>
                 <mat-menu #menuMinimum="matMenu">
-                    <button mat-menu-item [routerLink]="['']">
+                    <button mat-menu-item [routerLink]="['/']">
+                        <mat-icon>navigate_next</mat-icon>
+                        <span>3° e 4° bimestre</span>
+                    </button>
+                    <button mat-menu-item [routerLink]="['/minimum-four-bimester']">
                         <mat-icon>navigate_next</mat-icon>
                         <span>4° bimestre</span>
                     </button>
@@ -24,18 +29,22 @@
                 </mat-menu>
             
                 <button mat-icon-button matBadgeColor="warn" [matMenuTriggerFor]="menuAverage" 
-                    [class.menu-selected]="menuSelected(['/general-avarage', '/bimester-avarage'])">
+                    [class.menu-selected]="menuSelected(['/general-avarage', '/bimester-avarage', '/end-avarage'])">
                     <span class="label-menu-item">Média</span>
                     <img src="assets/icon-down.svg" alt="Icone para baixo">
                 </button>
                 <mat-menu #menuAverage="matMenu">
+                    <button mat-menu-item [routerLink]="['/bimester-avarage']">
+                        <mat-icon>navigate_next</mat-icon>
+                        <span>Média Bimestral</span>
+                    </button>
                     <button mat-menu-item [routerLink]="['/general-avarage']">
                         <mat-icon>navigate_next</mat-icon>
                         <span>Média Geral</span>
                     </button>
-                    <button mat-menu-item [routerLink]="['/bimester-avarage']">
+                    <button mat-menu-item [routerLink]="['/end-avarage']">
                         <mat-icon>navigate_next</mat-icon>
-                        <span>Média bimestral</span>
+                        <span>Média Final</span>
                     </button>
                 </mat-menu>
             </div>
@@ -45,17 +54,23 @@
     <mat-sidenav-container fxFlexFill [style.display]="showSidenav ? 'block' : 'none'" fxShow="true" fxHide.gt-sm>
         <mat-sidenav #sidenav class="sidenav">
           <mat-nav-list>
-            <button mat-menu-item [routerLink]="['']" [class.menu-selected]="menuSelected(['/'])">
+            <button mat-menu-item [routerLink]="['/']" [class.menu-selected]="menuSelected(['/'])">
+                <span>Mínimo no 3° e 4° bimestre</span>
+            </button>
+            <button mat-menu-item [routerLink]="['/minimum-four-bimester']" [class.menu-selected]="menuSelected(['/minimum-four-bimester'])">
                 <span>Mínimo no 4° bimestre</span>
             </button>
             <button mat-menu-item [routerLink]="['/pf']" [class.menu-selected]="menuSelected(['/pf'])">
                 <span>Mínimo na PF</span>
             </button>
+            <button mat-menu-item [routerLink]="['/bimester-avarage']" [class.menu-selected]="menuSelected(['/bimester-avarage'])">
+              <span>Média Bimestral</span>
+            </button>
             <button mat-menu-item [routerLink]="['/general-avarage']" [class.menu-selected]="menuSelected(['/general-avarage'])">
                 <span>Média Geral</span>
             </button>
-            <button mat-menu-item [routerLink]="['/bimester-avarage']" [class.menu-selected]="menuSelected(['/bimester-avarage'])">
-              <span>Média bimestral</span>
+            <button mat-menu-item [routerLink]="['/end-avarage']" [class.menu-selected]="menuSelected(['/end-avarage'])">
+                <span>Média Final</span>
             </button>
           </mat-nav-list>
         </mat-sidenav>

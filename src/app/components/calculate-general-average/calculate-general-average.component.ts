@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { GradeCalculateGeneralAverageModel } from 'src/shared/models/GradeCalculateGeneralAverageModel';
+import { roundFloat } from 'src/shared/utils/roundFloat';
 
 @Component({
   selector: 'app-calculate-general-average',
@@ -31,7 +32,7 @@ export class CalculateGeneralAvarage implements OnInit {
 
    calculateGeneralAverage(notaBimester1: number, notaBimester2:number, notaBimester3:number, notaBimester4:number): number{
     const generalAverage: number = ((+notaBimester1 * 2) + (+notaBimester2 * 2) + (+notaBimester3 * 3) + (+notaBimester4 * 3)) / 10;
-    return isNaN(generalAverage) ? undefined : +generalAverage.toFixed(2)
+    return isNaN(generalAverage) ? undefined : roundFloat(generalAverage, -2)
   }
 
   showResult() { 
