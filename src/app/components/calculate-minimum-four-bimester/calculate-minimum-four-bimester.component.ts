@@ -40,7 +40,21 @@ export class CalculateMinimumFourBimester implements OnInit {
     const weightBimester3 = 3;
     const result: number = (minimumTotal - 
       ((+gradeBimester1 * weightBimester1And2) + (+gradeBimester2 * weightBimester1And2) + (+gradeBimester3 * weightBimester3))) / 3
-    return isNaN(result) ? undefined : roundFloat(result, -2)
+    return isNaN(result) ? undefined : roundFloat(result, -2);
+  }
+
+  formatNumber(event, variable: string) {
+    let num = event.target.value;
+    num = num.replace(',', '.');
+    num = +num;
+    num = roundFloat(num, -2);
+    if(num > 10) {
+      num = 10;
+    }
+    if(num < 0) {
+      num = 0;
+    }
+    this.grades[variable] = num;
   }
 
   showResult() { 

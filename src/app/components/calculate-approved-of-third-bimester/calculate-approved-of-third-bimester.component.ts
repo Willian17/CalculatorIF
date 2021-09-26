@@ -29,6 +29,20 @@ export class CalculateApprovedOfThirdBimesterComponent implements OnInit {
     this.showResult();
   }
 
+  formatNumber(event, variable: string) {
+    let num = event.target.value;
+    num = num.replace(',', '.');
+    num = +num;
+    num = roundFloat(num, -2);
+    if(num > 10) {
+      num = 10;
+    }
+    if(num < 0) {
+      num = 0;
+    }
+    this.grades[variable] = num;
+  }
+
 
   calculateMinimumGradeApprovedThirdBimester(gradeBimester1: number, gradeBimester2: number): number { 
     const minimumTotal = 60;

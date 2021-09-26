@@ -4,8 +4,8 @@
             <input 
                 matInput 
                 required
-                type="number" 
-                max="10" 
+                type="text" 
+                (blur)="formatNumber($event, 'firstBimester')"
                 placeholder="Média 1° bimestre" 
                 [(ngModel)]="grades.firstBimester" 
                 name="grade1">
@@ -15,8 +15,8 @@
             <input 
                 required
                 matInput 
-                type="number" 
-                max="10" 
+                type="text" 
+                (blur)="formatNumber($event, 'secondBimester')"
                 placeholder="Média 2° bimestre" 
                 [(ngModel)]="grades.secondBimester"
                 name="grade2">
@@ -26,8 +26,8 @@
             <input 
                 required
                 matInput 
-                type="number" 
-                max="10" 
+                type="text" 
+                (blur)="formatNumber($event, 'thirdBimester')"
                 placeholder="Média 3° bimestre" 
                 [(ngModel)]="grades.thirdBimester" 
                 name="grade3">

@@ -4,8 +4,8 @@
             <input 
                 matInput 
                 required
-                type="number" 
-                max="10" 
+                type="text" 
+                (blur)="formatNumber($event, 'generalAverage')"
                 placeholder="Média Geral" 
                 [(ngModel)]="grades.generalAverage" 
                 name="grade1">
@@ -15,8 +15,8 @@
             <input 
                 required
                 matInput 
-                type="number" 
-                max="10" 
+                type="text" 
+                (blur)="formatNumber($event, 'pf')"
                 placeholder="Nota na PF" 
                 [(ngModel)]="grades.pf"
                 name="grade2">

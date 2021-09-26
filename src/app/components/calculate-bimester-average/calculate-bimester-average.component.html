@@ -4,8 +4,8 @@
                 <input 
                     matInput 
                     required
-                    type="number" 
-                    max="10" 
+                    type="text" 
+                    (blur)="formatNumber($event, 'grade1')"
                     placeholder="Nota 1" 
                     [(ngModel)]="grades.grade1" 
                     name="grade1"
@@ -16,8 +16,8 @@
                 <input 
                     matInput 
                     required
-                    type="number" 
-                    max="10" 
+                    type="text" 
+                     (blur)="formatNumber($event, 'grade2')"
                     placeholder="Nota 2" 
                     [(ngModel)]="grades.grade2"
                     name="grade2"
@@ -27,8 +27,8 @@
             <mat-form-field>
                 <input 
                     matInput 
-                    type="number" 
-                    max="10" 
+                    type="text" 
+                     (blur)="formatNumber($event, 'grade3')"
                     placeholder="Nota 3" 
                     [(ngModel)]="grades.grade3" 
                     name="grade3"
@@ -38,8 +38,8 @@
                 <input 
                     matInput 
                     required
-                    type="number" 
-                    max="10" 
+                    type="text" 
+                     (blur)="formatNumber($event, 'attitudinal')"
                     placeholder="atitudinal" 
                     [(ngModel)]="grades.attitudinal" 
                     name="attitudinal"

@@ -30,6 +30,20 @@ export class CalculateGeneralAvarage implements OnInit {
     this.showResult();
    }
 
+   formatNumber(event, variable: string) {
+    let num = event.target.value;
+    num = num.replace(',', '.');
+    num = +num;
+    num = roundFloat(num, -2);
+    if(num > 10) {
+      num = 10;
+    }
+    if(num < 0) {
+      num = 0;
+    }
+    this.grades[variable] = num;
+  }
+
    calculateGeneralAverage(notaBimester1: number, notaBimester2:number, notaBimester3:number, notaBimester4:number): number{
     const generalAverage: number = ((+notaBimester1 * 2) + (+notaBimester2 * 2) + (+notaBimester3 * 3) + (+notaBimester4 * 3)) / 10;
     return isNaN(generalAverage) ? undefined : roundFloat(generalAverage, -2)

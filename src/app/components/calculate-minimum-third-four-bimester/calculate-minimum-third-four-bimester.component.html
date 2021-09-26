@@ -4,10 +4,10 @@
             <input 
                 matInput 
                 required
-                type="number" 
-                max="10" 
+                type="text" 
                 placeholder="Média 1° bimestre" 
                 [(ngModel)]="grades.firstBimester" 
+                (blur)="formatNumber($event, 'firstBimester')"
                 name="grade1">
         </mat-form-field>
 
@@ -15,10 +15,10 @@
             <input 
                 required
                 matInput 
-                type="number" 
-                max="10" 
+                type="text" 
                 placeholder="Média 2° bimestre" 
                 [(ngModel)]="grades.secondBimester"
+                (blur)="formatNumber($event, 'secondBimester')"
                 name="grade2">
         </mat-form-field>
 

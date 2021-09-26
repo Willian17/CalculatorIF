@@ -32,6 +32,20 @@ export class CalculateBimesterAverage implements OnInit {
     )
     this.showResult();
   }
+
+  formatNumber(event, variable: string) {
+    let num = event.target.value;
+    num = num.replace(',', '.');
+    num = +num;
+    num = roundFloat(num, -2);
+    if(num > 10) {
+      num = 10;
+    }
+    if(num < 0) {
+      num = 0;
+    }
+    this.grades[variable] = num;
+  }
   
   calculateAvarageBimester(grade1: number, grade2:number, grade3:number | undefined, attitudinal:number): number{
     const sizeGradeAvarage = 0.8;
