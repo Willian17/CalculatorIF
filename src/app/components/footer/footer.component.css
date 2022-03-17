@@ -1,0 +1,15 @@
+footer {
+    background-color: #fff;
+    padding: 2rem;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    border-top: 1px solid #E4E4E4;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 1rem;
+        text-align: center;
+    }
+}

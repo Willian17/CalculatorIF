@@ -33,7 +33,6 @@ export class CalculateApprovedOfThirdBimesterComponent implements OnInit {
     let num = event.target.value;
     num = num.replace(',', '.');
     num = +num;
-    num = roundFloat(num, -2);
     if(num > 10) {
       num = 10;
     }
