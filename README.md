@@ -42,14 +42,22 @@
 $ git clone https://github.com/Willian17/CalculatorIF.git
 
 ### Instalar Dependencias
+```
 $ yarn install 
+```
 ou
+```
 $ npm install
+```
 
 ### Executar Aplicação
+```
 $ yarn start 
+```
 ou 
+```
 $ npm start
+```
 
 
 
