@@ -57,12 +57,9 @@ $ npm start
 
 ## :computer: Tecnologias <a name="tecnologias"></a>
 <ul>
-<li>Node.js</li>
-<li>Express.js</li>
+<li>Angular</li>
 <li>Typescript</li>
-<li>React</li>
-<li>React Native</li>
-<li>Expo</li>
+<li>Karma</li>
 
 </ul>
 
