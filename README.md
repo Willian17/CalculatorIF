@@ -1,27 +1,108 @@
-# Calculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+![GitHub repo size](https://img.shields.io/github/repo-size/Willian17/CalculatorIF?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/Willian17/CalculatorIF?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/Willian17/CalculatorIF?style=for-the-badge)
+<a href="https://github.com/Willian17CalculatorIF/commits/master">
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Willian17/CalculatorIF?color=774DD6&style=for-the-badge">
+</a> 
+<a href="https://github.com/Willian17/model-complete-readme/stargazers">
+<img alt="Stargazers" src="https://img.shields.io/github/stars/Willian17/CalculatorIF?style=for-the-badge&logo=github">
+</a>
 
-## Development server
+<p align="center">
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<h1 align="center"> CalculadoraIF </h3>
 
-## Code scaffolding
+<p align="center"><i>Calculadora de notas acadêmicas web usando calculos do campus Instituto Federal de Mato Grosso feito em Angular</i></p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<details>
+<summary>📖 Conteúdo</summary>
+<br />
 
-## Build
+* [➤ Sobre o projeto](#sobre)
+* [➤ Como executar](#executar)
+* [➤ Tecnologias](#tecnologias)
+* [➤ Colaboradores](#colaboradores)
+* [➤ Contribuidores](#contribuir)
+* [➤ Licença](#licenca)
+</details>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#sobre-o-projeto)
 
-## Running unit tests
+## :pushpin: Sobre o Projeto <a name="sobre"></a>
+<div>
+<img src="https://user-images.githubusercontent.com/79884850/159080867-e10582f1-b234-4ff3-8811-bf9a424d1818.png" width="400px">
+</div>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#executar)
 
-## Running end-to-end tests
+## :construction_worker: Como executar <a name="executar"></a>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Clone Repository
+$ git clone https://github.com/Willian17/CalculatorIF.git
 
-## Further help
+### Instalar Dependencias
+$ yarn install 
+ou
+$ npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Executar Aplicação
+$ yarn start 
+ou 
+$ npm start
+
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](##tecnologias)
+
+## :computer: Tecnologias <a name="tecnologias"></a>
+<ul>
+<li>Node.js</li>
+<li>Express.js</li>
+<li>Typescript</li>
+<li>React</li>
+<li>React Native</li>
+<li>Expo</li>
+
+</ul>
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
+
+## 🤝 Colaboradores <a name="colaboradores"></a>
+
+Agradecemos às seguintes pessoas que contribuíram para este projeto:
+
+<table>
+<tr>
+<td align="center">
+<a href="#">
+  <img src="https://avatars2.githubusercontent.com/u/53010824?s=460&u=40f41a9ce155fe1a214f422849ad88fd7f0b9710&v=4" width="100px;" alt="Foto do Willian Fernandes no GitHub"/><br>
+  <sub>
+    <b>Willian Fernandes</b>
+  </sub>
+</a>
+</td>
+</tr>
+</table>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contribuidores)
+
+## 😄 Seja um dos contribuidores<br> <a name="contribuir"></a>
+
+Contribuições são sempre bem-vindas!
+
+1. Fork o Projeto
+2. Criar uma Branch (git checkout -b feature/AmazingFeature)
+3. Commit suas alterações (git commit -m 'Add some AmazingFeature)
+4. Push na Branch (git push origin feature/AmazingFeature)
+5. Abra um Pull Request
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#licensa)
+
+## 📝 Licença <a name="licenca"></a>
+
+Esse projeto está sob licença MIT.
+
+## :man_astronaut: Mostre seu apoio 
+
+Dê uma ⭐️ se esse projeto te ajudou!
